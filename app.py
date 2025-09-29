@@ -42,8 +42,8 @@ if uploaded_file:
         if "contractid" in df.columns:
             df["extracted_number"] = df["extracted_number"].fillna(df["contractid"])
 
-        # Remove duplicados
-        df = df.drop_duplicates(subset=["extracted_number"])
+        # ⚠️ Não remove duplicados (mantém tudo)
+        # df = df.drop_duplicates(subset=["extracted_number"])
 
         st.subheader("📊 Resultado da Extração")
         st.dataframe(df)
